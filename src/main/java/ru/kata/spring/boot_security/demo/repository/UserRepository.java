@@ -10,4 +10,6 @@ public interface UserRepository extends JpaRepository<User, Long> {
     @Query("Select u from User u left join fetch u.roles where u.username=:username")
     User findByUsername(String username);
 
+
+    User findByEmail(String email);
 }
